@@ -1,11 +1,16 @@
-n = int(input())
-k = []
-for _ in range(n):
-    k.append(int(input()))
-k.sort()
+import sys
+input = sys.stdin.readline
 
-answers = []
-for x in k:
-    answers.append(x*n)
-    n -= 1
-print(max(answers))
+n = int(input())
+arr = []
+possible = []
+
+for _ in range(n):
+    arr.append(int(input()))
+
+arr.sort()
+k = len(arr)
+for i in arr:
+    possible.append(i*k)
+    k-=1
+print(max(possible))
