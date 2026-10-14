@@ -10,15 +10,14 @@ def solution(maps):
     queue.append((0,0,1))
     visited[0][0] = 1
     
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
+    
     while(queue):
         x,y,p = queue.popleft()
         
         if x == n-1 and y == m-1 :
-            answer = p
-            break
-        
-        dx = [-1, 1, 0, 0]
-        dy = [0, 0, -1, 1]
+            return p        
         
         for i in range(4):
             nx = x + dx[i]
@@ -30,7 +29,4 @@ def solution(maps):
                 queue.append((nx, ny, p+1))
                 visited[nx][ny] = 1
         
-    if answer == 0:
-        return -1
-    else:
-        return answer
+    return -1
