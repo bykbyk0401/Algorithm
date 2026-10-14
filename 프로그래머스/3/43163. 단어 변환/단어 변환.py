@@ -21,3 +21,5 @@ def solution(begin, target, words):
             if not visited[i] and diff == 1:
                 visited[i] = True
                 q.append((next, cnt+1))
+    
+    return 0
