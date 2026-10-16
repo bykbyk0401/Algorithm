@@ -20,7 +20,7 @@ def solution(genres, plays):
     for genre in sorted_genres:
         sorted_songs = sorted(
             songs[genre],
-            key=lambda song: (-song[1], song[1])
+            key=lambda song: (-song[1], song[0])
         )
         
         selected = sorted_songs[:2]
